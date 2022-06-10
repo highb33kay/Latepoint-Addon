@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: LatePoint Addon - Starter
+ * Plugin Name: LatePoint Cleaner
  * Plugin URI:  https://latepoint.com/
  * Description: LatePoint addon starter template
  * Version:     1.0.0
- * Author:      LatePoint
+ * Author:      Highb33kay
  * Author URI:  https://latepoint.com/
- * Text Domain: latepoint-addon-starter
+ * Text Domain: latepoint-cleaner
  * Domain Path: /languages
  */
 
@@ -16,14 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // If no LatePoint class exists - exit, because LatePoint plugin is required for this addon
 
-if ( ! class_exists( 'LatePointAddonStarter' ) ) :
+if ( ! class_exists( 'LatePointCleaner' ) ) :
 
 /**
  * Main Addon Class.
  *
  */
 
-class LatePointAddonStarter {
+class LatePointCleaner {
 
   /**
    * Addon version.
@@ -31,7 +31,7 @@ class LatePointAddonStarter {
    */
   public $version = '1.0.0';
   public $db_version = '1.0.0';
-  public $addon_name = 'latepoint-addon-starter';
+  public $addon_name = 'latepoint-cleaner';
 
 
   /**
@@ -122,27 +122,27 @@ class LatePointAddonStarter {
   // Loads addon specific javascript and stylesheets for frontend site
   public function load_front_scripts_and_styles(){
     // Stylesheets
-    wp_enqueue_style( 'latepoint-addon-starter', $this->public_stylesheets() . 'latepoint-addon-starter-front.css', false, $this->version );
+    wp_enqueue_style( 'latepoint-cleaner', $this->public_stylesheets() . 'latepoint-cleaner-front.css', false, $this->version );
 
     // Javascripts
-    wp_enqueue_script( 'latepoint-addon-starter-front',  $this->public_javascripts() . 'latepoint-addon-starter-front.js', array('jquery'), $this->version );
+    wp_enqueue_script( 'latepoint-cleaner-front',  $this->public_javascripts() . 'latepoint-cleaner-front.js', array('jquery'), $this->version );
 
   }
 
   // Loads addon specific javascript and stylesheets for backend (wp-admin)
   public function load_admin_scripts_and_styles($localized_vars){
     // Stylesheets
-    wp_enqueue_style( 'latepoint-addon-starter', $this->public_stylesheets() . 'latepoint-addon-starter-admin.css', false, $this->version );
+    wp_enqueue_style( 'latepoint-cleaner', $this->public_stylesheets() . 'latepoint-cleaner-admin.css', false, $this->version );
 
     // Javascripts
-    wp_enqueue_script( 'latepoint-addon-starter',  $this->public_javascripts() . 'latepoint-addon-starter-admin.js', array('jquery'), $this->version );
+    wp_enqueue_script( 'latepoint-cleaner',  $this->public_javascripts() . 'latepoint-cleaner-admin.js', array('jquery'), $this->version );
   }
 
 
   public function add_menu_links($menus){
     if(!OsAuthHelper::is_admin_logged_in()) return $menus;
     $menus[] = ['id' => 'addon_starter', 
-                'label' => __( 'Example Link', 'latepoint-addon-starter' ), 
+                'label' => __( 'Example Link', 'latepoint-cleaner' ), 
                 'icon' => 'latepoint-icon latepoint-icon-play-circle', 
                 'link' => OsRouterHelper::build_link(['example', 'view_example'])];
     return $menus;
@@ -163,7 +163,7 @@ class LatePointAddonStarter {
 
   // set text domain for the addon, for string translations to work
   public function load_plugin_textdomain() {
-    load_plugin_textdomain('latepoint-addon-starter', false, dirname(plugin_basename(__FILE__)) . '/languages');
+    load_plugin_textdomain('latepoint-cleaner', false, dirname(plugin_basename(__FILE__)) . '/languages');
   }
 
 
@@ -186,5 +186,5 @@ class LatePointAddonStarter {
 endif;
 
 if ( in_array( 'latepoint/latepoint.php', get_option( 'active_plugins', array() ) )  || array_key_exists('latepoint/latepoint.php', get_site_option('active_sitewide_plugins', array())) ) {
-  $LATEPOINT_ADDON_ADDON_STARTER = new LatePointAddonStarter();
+  $LATEPOINT_ADDON_CLEANER = new LatePointCleaner();
 }
