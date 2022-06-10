@@ -1,3 +1,3 @@
 # Add-on for LatePoint
 
-This is an example of a starter add-on/plugin that you can use to extend LatePoint, without modifying LatePoint itself.
+Late Point Plugin to Extend LatePoint Functionality Without Modifying the OriginalPlugin
