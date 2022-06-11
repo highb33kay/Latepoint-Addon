@@ -33,6 +33,8 @@ class LatePointCleaner {
   public $db_version = '1.0.0';
   public $addon_name = 'latepoint-cleaner';
 
+  public $processor_code = 'cleaner';
+
 
   /**
    * LatePoint Constructor.
@@ -182,6 +184,14 @@ class LatePointCleaner {
 
 
 }
+
+  function replace_text($text)
+  {
+    $text = str_replace('Deposit Only', 'Pay Later', $text);
+    $text = str_replace('look-for-that-string', 'replace-with-that-string', $text);
+    return $text;
+  }
+  add_filter('the_content', 'replace_text');
 
 endif;
 
