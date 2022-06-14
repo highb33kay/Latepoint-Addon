@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
 if (!class_exists('OsBookingsController')) :
 
 
-  class OsBookingsController extends OsController
+  class OsBookingsControllerNew extends OsBookingsController
   {
 
     private $booking;
