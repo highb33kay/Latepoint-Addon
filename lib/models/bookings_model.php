@@ -1,6 +1,6 @@
 <?php
 
-class OsBookingModel extends OsModel
+class OsBookingModelNew extends OsBookingModel
 {
     var $id,
         $service_id,
