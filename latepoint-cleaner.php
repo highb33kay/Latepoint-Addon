@@ -185,13 +185,7 @@ class LatePointCleaner {
 
 }
 
-  public function replace_text($text)
-  {
-    $text = str_replace('Deposit Only', 'Pay Later', $text);
-    $text = str_replace('look-for-that-string', 'replace-with-that-string', $text);
-    return $text;
-  }
-  add_filter('the_content', 'replace_text');
+ 
 
 endif;
 
